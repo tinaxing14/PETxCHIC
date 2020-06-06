@@ -2,14 +2,15 @@ const { Product } = require('./schema.js')
 
 
 module.exports = {
-  getProducts: (callback) => {
+  getProducts: (skip, callback) => {
     Product.find()
-      .then((result) => {
-        callback(null, result)
-      })
-      .catch((err) => {
+      .skip(skip)
+      .limit(8)
+      .exec((err, results) => {
         if(err) {
           callback(err)
+        } else {
+          callback(null, results)
         }
       })
   }

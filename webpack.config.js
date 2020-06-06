@@ -17,7 +17,7 @@ module.exports = {
         query: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
           plugins: [
-            ['import', { libraryName: "antd"}]
+            ['import', { libraryName: "antd", style:"css"}]
           ]
         },
       },
@@ -38,7 +38,11 @@ module.exports = {
           },
 
         ]
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   resolve: {
