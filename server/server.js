@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const { getAllProducts } = require('./controller.js')
+const { getAllProducts, addToCart } = require('./controller.js')
 
 const app = express();
 
@@ -18,4 +18,5 @@ app.use(express.json());
 // serving static file 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/api/products/:skip', getAllProducts)
+app.get('/api/products/:skip', getAllProducts);
+app.post('/api/products/addtocart', addToCart);
