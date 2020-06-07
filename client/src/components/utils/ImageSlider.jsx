@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from 'antd';
 
-const ImageSlider = ({ images }) => {
-  images = images.slice(0,3);
-  const [autoPlay, setAutoPlay] = useState(false);
-
+const ImageSlider = ({ images, autoplay, classname }) => {
+  const settings = {
+    dots: true,
+    slidesToShow: 1,
+    infinite:true,
+    autoplay:autoplay
+}
   return (
-    <div style={{maxHeight:'300px'}} onMouseEnter={() => { setAutoPlay(true)}} onMouseLeave={()=>{ setAutoPlay(false)}}>
-      <Carousel autoplay={autoPlay}>
+    <div className={classname}>
+      <Carousel {...settings} draggable={true}>
         {images.map((image,index) => (
           <div key ={index}>
             <img 
-            style={{maxHeight:'300px'}}
+            className={classname}
             src={image} alt="productImage"/>
           </div>
         ))}
