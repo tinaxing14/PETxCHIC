@@ -1,11 +1,18 @@
 import React from "react";
 import Product from './Product.jsx';
+import Cart from './Cart.jsx'
+import Footer from './Footer.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from './NavBar.jsx'
+
 const App = () => (
   <div>
-    <div><button>Shopping cart</button></div>
-    <div>header here</div>
-    <Product/>
-    <div>footer here</div>
+    <NavBar/>
+    <Switch>
+      <Route path='/' component={Product} exact />
+      <Route path='/cart' component={Cart}/>
+    </Switch>
+    <Footer/>
   </div>
 );
 

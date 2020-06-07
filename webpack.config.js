@@ -6,7 +6,7 @@ module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',
-    path: DIST_DIR
+    path: DIST_DIR,
   },
   module : {
     rules: [
@@ -42,13 +42,11 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-        options: {
-          modules: {
-            localIdentName: '[name]__[local]___[hash:base64:5]',
-          },
-        },
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.less'],

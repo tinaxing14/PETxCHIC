@@ -6,7 +6,7 @@ const { getAllProducts, addToCart } = require('./controller.js')
 
 const app = express();
 
-const PORT = 3414;
+const PORT = 3400;
 
 app.listen(PORT, () => console.log(`\x1b[32m Server listening on PORT\x1b[36m ${PORT}`));
 
@@ -17,6 +17,7 @@ app.use(express.json());
 
 // serving static file 
 app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/cart', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/products/:skip', getAllProducts);
 app.post('/api/products/addtocart', addToCart);
