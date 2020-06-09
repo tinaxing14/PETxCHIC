@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const { getAllProducts, addToCart } = require('./controller.js')
+const { getAllProducts, addToCart, getCartProducts, deleteProduct } = require('./controller.js')
 
 const app = express();
 
@@ -20,4 +20,6 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/cart', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/api/products/:skip', getAllProducts);
+app.get('/api/products/cart/:userId', getCartProducts);
 app.post('/api/products/addtocart', addToCart);
+app.post('/api/products/cart/:userId/:productId', deleteProduct);
