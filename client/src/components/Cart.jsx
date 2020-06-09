@@ -66,7 +66,7 @@ const Cart = () => {
                             Quantity: ${item.quantity}
                             Size: ${item.size}`}
             />
-            {`Total Price: $${item.price} x $${item.quantity} = $${item.price*item.quantity}`}
+            {`Total Price: $${item.price} x ${item.quantity} = $${item.price*item.quantity}`}
           </List.Item>
         )}
       />

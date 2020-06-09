@@ -16,6 +16,7 @@ const Product = ({ setCartNumber, cartNumber }) => {
   const [dataSize, setDataSize] = useState(parseInt(9));
   const [showProductDetail, setShowProductDetail] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
+  const [showModel, setShowModel] = useState(false);
 
   const loadProducts = (skip) => {
     axios
@@ -84,14 +85,49 @@ const Product = ({ setCartNumber, cartNumber }) => {
     <div className="product_container">
       <div className="product__title">Featured Products<a id='featureproducts'></a></div>
       <div className="product__meetmodels">
-        Meet Our Models
-        <br/>
-        <Avatar size={80} onClick={} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png" />
-      <Avatar size={80} onClick={} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png" />
+        <div>Meet Our Models</div>
+        <div>
+        <span className="model__info" onClick={()=>{setShowModel(true)}}><Avatar size={80} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png" /></span>
+        <span className="model__info" onClick={()=>{setShowModel(true)}}><Avatar size={80} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png" /></span>
         </div>
+      </div>
       <Row gutter={[15, 15]}>{renderCards}</Row>
       <div>
         {showProductDetail ? <ProductDetail product={currentProduct} setShowProductDetail={setShowProductDetail} setCartNumber={setCartNumber} cartNumber={cartNumber}/> : null}
+      </div>
+      <div >
+        {showModel 
+        ? <div className="productdetail__black" onClick={()=>{setShowModel(false)}}>
+            <div className='modelinfo___container'>
+              <div className='modelinfo__image'>
+                <div className='image__container' ><img className='modelimage' src='https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png'/></div>
+                <div  className='image__container'><img className='modelimage'src='https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png'/></div></div>
+              <div className="modelinfo__description">
+                Name: Missy
+                <br/>
+                Weight: 12 lbs
+                <br/>
+                Eye color: Hazel
+                <br/>
+                Length: Short
+                <br/>
+                Personality: Chill
+                <br/>
+                <br/>
+                <br/>
+                Name: Chunk
+                <br/>
+                Weight: 36 lbs
+                <br/>
+                Eye color: Black
+                <br/>
+                Length: Short
+                <br/>
+                Personality: Friendly
+              </div>
+            </div>
+          </div> 
+        : null}
       </div>
       <div>
         {dataSize === 9 ? <button className='product__btn' onClick={loadMore}>Load More</button> : null}
