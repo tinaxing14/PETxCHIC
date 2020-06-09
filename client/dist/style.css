@@ -302,7 +302,8 @@ h1 {
   z-index: 2;
   background-color: white;
   margin-top: -550px;
-  min-height: 500px;
+  min-height: 2000px;
+  font-family: 'Anton', sans-serif;
 }
 
 .cart__inner{
@@ -341,4 +342,30 @@ h1 {
 @keyframes spin {
   from {transform:rotate(0deg);}
   to {transform:rotate(360deg);}
+}
+
+.cart__checkout {
+  margin: -300px 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+}
+.carttotal{
+  font-size: large;
+}
+
+.cart__button{
+  background-color: black;
+  color:white;
+  width:40%;
+  border: black 5px solid;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.cart__button:hover{
+  background-color: white;
+  color:black;
+  transition-duration: 0.7s;
 }
