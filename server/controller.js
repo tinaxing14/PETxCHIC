@@ -1,4 +1,4 @@
-const { getProducts,addCart,getCart } = require('../db/model.js')
+const { getProducts, addCart, getCart, deleteCart } = require('../db/model.js')
 module.exports = {
   getAllProducts: (req, res) => {
     const skip = parseInt(req.params.skip)
@@ -36,6 +36,7 @@ module.exports = {
   },
   deleteProduct: (req, res) => {
     const { userId, productId } = req.params;
+    console.log(userId,productId)
     deleteCart(userId, productId, (err, result)=>{
       if(err){
         console.log(err)
