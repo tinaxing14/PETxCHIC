@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from 'antd';
 
-const ImageSlider = ({ images, autoplay, classname }) => {
+const ImageSlider = ({ images, autoplay, classname, dots }) => {
   const settings = {
-    dots: true,
+    dots: dots,
     slidesToShow: 1,
     infinite:true,
     autoplay:autoplay

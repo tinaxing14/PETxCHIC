@@ -9,11 +9,11 @@ import { ShoppingCartOutlined, HeartOutlined } from "@ant-design/icons";
 import { Col, Card, Row, Avatar } from "antd";
 const { Meta } = Card;
 
-const Product = () => {
+const Product = ({ setCartNumber, cartNumber }) => {
   //react hooks
   const [products, setProducts] = useState([]);
   const [skip, setSkip] = useState(parseInt(0));
-  const [dataSize, setDataSize] = useState(parseInt(8));
+  const [dataSize, setDataSize] = useState(parseInt(9));
   const [showProductDetail, setShowProductDetail] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
 
@@ -21,7 +21,6 @@ const Product = () => {
     axios
       .get(`/api/products/${skip}`)
       .then((response) => {
-        console.log(response.data);
         setDataSize(response.data.length);
         setProducts([...products, ...response.data]);
       })
@@ -32,7 +31,7 @@ const Product = () => {
 
   const loadMore = () => {
     loadProducts(skip);
-    setSkip(skip + 8);
+    setSkip(skip + 9);
   };
 
   const handleProductDetail = (product) => {
@@ -43,7 +42,7 @@ const Product = () => {
   //same as componentdidmount - gave an additional [] to prevent infinite loops
   useEffect(() => {
     loadProducts(skip);
-    setSkip(skip + 8);
+    setSkip(skip + 9);
   }, []);
 
   const renderCards = products.map((product, index) => {
@@ -51,15 +50,15 @@ const Product = () => {
     let avatar;
     if (product.category === "cat") {
       avatar = (
-        <Avatar src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png" />
+        <Avatar size="large" src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png" />
       );
     } else if (product.category === "dog") {
       avatar = (
-        <Avatar src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png" />
+        <Avatar size="large" src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png" />
       );
     }
     return (
-      <Col lg={8} md={12} xs={24}>
+      <Col key={index} lg={8} md={12} xs={24}>
         <Card
           className='card'
           onClick={() => {
@@ -67,13 +66,13 @@ const Product = () => {
           }}
           key={index}
           hoverable={true}
-          cover={<ImageSlider images={product.images.slice(0,3)} autoplay={false} classname='product_imageSlider' />}
+          cover={<ImageSlider images={product.images.slice(0,3)} autoplay={false} classname='product_imageSlider' dots={false} />}
           actions={[<ShoppingCartOutlined />, <HeartOutlined />]}
         >
           <Meta
             avatar={avatar}
             title={product.name}
-            style={{ height: "30px" }}
+            style={{ height: "30px", cursor: "pointer" }}
             description={`$${product.price}`}
           />
         </Card>
@@ -83,12 +82,19 @@ const Product = () => {
   
   return (
     <div className="product_container">
+      <div className="product__title">Featured Products<a id='featureproducts'></a></div>
+      <div className="product__meetmodels">
+        Meet Our Models
+        <br/>
+        <Avatar size={80} onClick={} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.32 PM.png" />
+      <Avatar size={80} onClick={} src="https://petfashion.s3.us-east-2.amazonaws.com/Screen Shot 2020-06-05 at 9.37.36 PM.png" />
+        </div>
       <Row gutter={[15, 15]}>{renderCards}</Row>
       <div>
-        {showProductDetail ? <ProductDetail product={currentProduct}/> : null}
+        {showProductDetail ? <ProductDetail product={currentProduct} setShowProductDetail={setShowProductDetail} setCartNumber={setCartNumber} cartNumber={cartNumber}/> : null}
       </div>
       <div>
-        {dataSize === 8 ? <button onClick={loadMore}>Load More</button> : null}
+        {dataSize === 9 ? <button className='product__btn' onClick={loadMore}>Load More</button> : null}
       </div>
     </div>
   );
