@@ -1,27 +1,128 @@
+body{
+background-color: rgb(201, 199, 199);
+font-family: 'Anton', sans-serif;
+}
+
+h1 {
+  text-align: left;
+  color:whitesmoke;
+  font-size: large;
+  cursor: pointer;
+
+}
+
+/* App */
+
+.app_featureproducts {
+  margin:0 40%;
+  width:20%;
+  border: black 5px solid;
+  border-radius: 1px;
+  color: white;
+  margin-top: 590px;
+  text-align: center;
+  background-color: black;
+  padding-top: 12px;
+  height:60px;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
 
 
+.app_featureproducts:hover{
+  background-color: white;
+  color:black;
+  transition-duration: 0.7s;
+}
+
+.app__footer {
+  background-image: url(https://www.muralsyourway.com/media/catalog/product/cache/1/base/1200x/040ec09b1e35df139433887a97daa66f/p/a/paw-prints-wallpaper.jpg);
+  height: 100px;
+  width:100%;
+  background-color: black;
+
+}
+.navbar__picture {
+  width: 100%;
+  height:50px;
+  position:fixed;
+  top:60px;
+  z-index: 2;
+  background-image: url(https://www.muralsyourway.com/media/catalog/product/cache/1/base/1200x/040ec09b1e35df139433887a97daa66f/p/a/paw-prints-wallpaper.jpg);
+}
+
+.app__cover {
+  width: 100%;
+  height:600px;
+  position:fixed;
+  top:120px;
+  margin-bottom: -50px;
+  z-index: -1;
+  background-color: black;
+}
+.cover__image {
+  max-width: 100%;
+  max-height: 100%;
+}
 
 
+/* navbar */
 
-
-
-
-
-
-
-
-
-
-
-
-
+.navbar__container{
+  font-family: 'Anton', sans-serif;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height:70px;
+  position:fixed;
+  top:0;
+  z-index: 2;
+  background-color: black;
+  color:white;
+}
+.navbar__routes{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:auto;
+  justify-content: space-around;
+}
+.navbar__title{
+  width:80%;
+  color:white;
+  margin:auto;
+  text-align: left;
+  font-size:40px;
+  padding-left: 40px;
+}
 
 /* product.jsx */
+.product__title{
+  text-align: center;
+  color:black;
+  font-size: 40px;
+  margin:150px 0;
+  font-weight: bolder;
 
+}
+
+.product__meetmodels{
+  text-align: center;
+  color:black;
+  font-size: 20px;
+  margin:20px 0;
+  font-weight: bolder;
+}
 .product_container{
-  max-width: 1000px;
+  padding:50px 150px 0px 150px;
+  width:100%;
   display: center;
-  margin:auto;
+  margin:400px 0px 300px 0px;
+  z-index: 2;
+  background-color:whitesmoke;
+  font-family: 'Anton', sans-serif;
 }
 .product_imageSlider{
   max-height: 280px;
@@ -30,11 +131,46 @@
   width:300px;
 }
 
+.product__btn{
+  margin:20px 42% 60px 42%;
+  width:18%;
+  border: black 5px solid;
+  border-radius: 1px;
+  color: white;
+  background-color: black;
+  height:40px;
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.product__btn:hover{
+  background-color: white;
+  color:black;
+  transition-duration: 0.7s;
+}
+
+
 /* productdetail.jsx */
+
+.productdetail__black{
+  background-color:rgba(37, 37, 37, 0.9);
+  height:100%;
+  width:100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
 .productdetail_container{
+  font-family: 'Anton', sans-serif;
   display: flex;
   flex-direction: row;
-  z-index: 1;
+  z-index: 2;
+  background-color: white;
+  height:500px;
+  width:1000px;
+  margin:100px auto;
 }
 
 .productdetail_image{
@@ -42,12 +178,122 @@
   
 }
 .productdetail_imageSlider{
-  height:400px
+  height:500px;
 }
 .product_info{
-  border:solid black 1px;
-  width:50%;
+  width:100%;
   display: flex;
   flex-direction: column;
 }
+.productdetail__exitbtn{
+  align-self: flex-end;
+  padding:5px;
+}
+.productdetail__title{
+  align-self: center;
+  font-weight: bolder;
+  font-size: 20px;
+}
 
+.productdetail__price{
+  align-self: center;
+  font-weight: bolder;
+  font-size: 18px;
+  margin:auto;
+}
+
+.productdetail__description{
+  align-self: center;
+  font-size: 13px;
+  margin:20px 30px 20px 30px;
+  text-align: justify;
+}
+
+.productdetail__size__container{
+  display: flex;
+  flex-direction: row;
+  margin:0px 30px 40px 30px;
+  justify-content: space-evenly;
+  width:40%
+
+}
+
+.productdetail__size{
+  border:1px solid black;
+  width:25px;
+  height:25px;
+  text-align: center;
+  cursor:pointer;
+}
+
+.productdetail__size:hover {
+  border: black 2px solid;
+}
+
+.productdetail__btn{
+  background-color: black;
+  color:white;
+  width:40%;
+  border: black 5px solid;
+  border-radius: 1px;
+  margin-bottom: 40px;
+  margin-left:30%;
+  
+}
+
+.productdetail__btn:hover{
+  background-color: white;
+  color:black;
+  transition-duration: 0.7s;
+}
+
+.productdetail__size__selected{
+  margin-left:38%;
+  margin-bottom: 10px;
+}
+
+/* cart */
+.cart__container{
+  z-index: 2;
+  background-color: white;
+  margin-top: -550px;
+  min-height: 500px;
+}
+
+.cart__inner{
+  margin:0 14% 400px 14%;
+}
+
+.cart__title{
+  font-family: 'Anton', sans-serif;
+  font-size: xx-large;
+  line-height: 100px;
+  height: 50px;
+}
+
+.cart__list{
+  margin: 50px auto;
+}
+.btn__container{
+  display: flex;
+  flex-direction: row;
+}
+.spinner__container{
+  margin: -66px 0% 90% 20px;
+  color: black;
+}
+.success__spinner {
+  height:20px;
+  width:20px;
+  border:2px solid black;
+  border-top-color:white;
+  border-radius: 50%;
+  animation-name: spin;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
