@@ -5,7 +5,7 @@ module.exports = {
   getProducts: (skip, callback) => {
     Product.find()
       .skip(skip)
-      .limit(8)
+      .limit(9)
       .exec((err, results) => {
         if(err) {
           callback(err)
@@ -14,7 +14,7 @@ module.exports = {
         }
       })
   },
-  addCart: (id, size, callback) =>{
+  addCart: (id, size, price, image, name, callback) =>{
     User.find({email: 'tinaxingtest@gmail.com'}, (err, result) => {
       if(err) {
         callback(err)
@@ -47,6 +47,9 @@ module.exports = {
                   id:id,
                   size: size,
                   quantity:1,
+                  price: price,
+                  image: image,
+                  name: name,
                   date:Date.now()
                 }
               }
@@ -62,6 +65,25 @@ module.exports = {
           )
         }
 
+      }
+    })
+  },
+
+  getCart: (id, callback) => {
+    User.find({email:id}, (err, result)=>{
+      if(err) {
+        callback(err)
+      } else {
+        callback(null, result)
+      }
+    });
+  },
+  deleteCart: (userId, productId, callback) => {
+    User.findOneAndUpdate({email:userId},{$pull:{ cart:{ id: productId} }}, (err, result)=>{
+      if(err){
+        callback(err)
+      } else {
+        callback(null, result)
       }
     })
   }
