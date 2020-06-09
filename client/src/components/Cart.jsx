@@ -14,11 +14,11 @@ const Cart = () => {
     axios
       .get(`/api/products/cart/${userId}`)
       .then((response) => {
-        console.log(response);
         setCartProducts(response.data[0].cart);
-        // let total = response.data[0].cart.reduce((acc, item) => acc + item.price);
-        // console.log(total)
-        // setTotalPrice(total);
+        let total = response.data[0].cart.reduce((acc, item)=> {
+          return acc + Number(item.price) * Number(item.quantity);
+        }, 0)
+        setTotalPrice(total);
       })
       .catch((err) => {
         console.log(err);
@@ -28,6 +28,7 @@ const Cart = () => {
     axios.delete(`/api/products/cart/${userId}/${productid}`)
     .then((response) => {
       console.log(response);
+      loadCart("tinaxingtest@gmail.com")
     })
     .catch((err) => {
       console.log(err);
@@ -72,10 +73,11 @@ const Cart = () => {
       />
       </div>
       </div>
-      <div className='cart__checout'>
-            Total Price: {totalPrice}
-          </div>
-          <button>Checkout</button>
+      <div className='cart__checkout'>
+            <div className='carttotal'>Total Price: {`$${totalPrice}`}</div>
+            <button className='cart__button'>Checkout</button>
+      </div>
+          
     </div>
   );
 };
