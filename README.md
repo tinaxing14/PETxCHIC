@@ -1,6 +1,6 @@
 
 # PETxCHIC
-
+A full-stack e-commerce web app for pet clothes, built with React, ExpressJS and MongoDB database.
 
 
 ## Demo of the module
