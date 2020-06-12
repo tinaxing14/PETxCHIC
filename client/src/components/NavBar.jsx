@@ -5,7 +5,9 @@ import { Badge } from 'antd';
 const NavBar = ({ cartNumber }) => (
   <div className="navbar__container">
     <div className="navbar__title">
-      PET x CHIC
+    <a href="/">
+      <p style={{color:"white"}}>PET x CHIC</p>
+    </a>
     </div>
     <div className="navbar__routes">
       <div>
