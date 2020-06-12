@@ -78,8 +78,8 @@ module.exports = {
       }
     });
   },
-  deleteCart: (userId, productId, callback) => {
-    User.findOneAndUpdate({email:userId},{$pull:{ cart:{ id: productId} }}, (err, result)=>{
+  deleteCart: (userId, productId, size, callback) => {
+    User.findOneAndUpdate({email:userId},{$pull:{ cart:{ id: productId, size: size} }}, (err, result)=>{
       if(err){
         callback(err)
       } else {

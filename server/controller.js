@@ -35,9 +35,8 @@ module.exports = {
       })
   },
   deleteProduct: (req, res) => {
-    const { userId, productId } = req.params;
-    console.log(userId,productId)
-    deleteCart(userId, productId, (err, result)=>{
+    const { userId, productId, size } = req.params;
+    deleteCart(userId, productId, size, (err, result)=>{
       if(err){
         console.log(err)
         res.status(500).end()

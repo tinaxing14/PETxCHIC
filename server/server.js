@@ -22,4 +22,4 @@ app.use('/cart', express.static(path.join(__dirname, '../client/dist')));
 app.get('/api/products/:skip', getAllProducts);
 app.get('/api/products/cart/:userId', getCartProducts);
 app.post('/api/products/addtocart', addToCart);
-app.delete('/api/products/cart/:userId/:productId', deleteProduct);
+app.delete('/api/products/cart/:userId/:productId/:size', deleteProduct);

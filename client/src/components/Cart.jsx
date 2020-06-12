@@ -24,8 +24,8 @@ const Cart = () => {
         console.log(err);
       });
   };
-  const deleteProduct = (userId, productid) => {
-    axios.delete(`/api/products/cart/${userId}/${productid}`)
+  const deleteProduct = (userId, productid, size) => {
+    axios.delete(`/api/products/cart/${userId}/${productid}/${size}`)
     .then((response) => {
       console.log(response);
       loadCart("tinaxingtest@gmail.com")
@@ -51,7 +51,7 @@ const Cart = () => {
         renderItem={(item) => (
           <List.Item
             key={item.id}
-            actions={[<DeleteOutlined onClick={()=>{deleteProduct('tinaxingtest@gmail.com',item.id)}}/>]}
+            actions={[<DeleteOutlined onClick={()=>{deleteProduct('tinaxingtest@gmail.com', item.id, item.size)}}/>]}
             extra={
               <img
                 width={100}
