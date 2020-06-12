@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "seed": "node db/seed.js"
   },
   "dependencies": {
     "antd": "^4.3.1",
