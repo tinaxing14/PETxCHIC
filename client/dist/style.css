@@ -16,10 +16,11 @@ h1 {
 .app_featureproducts {
   margin:0 40%;
   width:20%;
+  min-width: 180px;
   border: black 5px solid;
   border-radius: 1px;
   color: white;
-  margin-top: 590px;
+  margin-top: 45%;
   text-align: center;
   background-color: black;
   padding-top: 12px;
@@ -147,6 +148,7 @@ h1 {
 .product__btn{
   margin:20px 42% 60px 42%;
   width:18%;
+  min-width:180px;
   border: black 5px solid;
   border-radius: 1px;
   color: white;
@@ -213,8 +215,8 @@ h1 {
   flex-direction: row;
   z-index: 2;
   background-color: white;
-  height:500px;
-  width:1000px;
+  height:75%;
+  width:80%;
   margin:100px auto;
 }
 
