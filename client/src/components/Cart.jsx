@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "antd/dist/antd.css";
-import { List, Avatar, Space } from "antd";
+import { List, Avatar } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 
 const Cart = () => {
@@ -51,7 +51,7 @@ const Cart = () => {
         renderItem={(item) => (
           <List.Item
             key={item.id}
-            actions={[<DeleteOutlined onClick={()=>{deleteProduct('tinaxingtest@gmail.com', item.id, item.size)}}/>]}
+            actions={[<DeleteOutlined key={item.id} onClick={()=>{deleteProduct('tinaxingtest@gmail.com', item.id, item.size)}}/>]}
             extra={
               <img
                 width={100}

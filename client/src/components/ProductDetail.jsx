@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
+import React, { useState } from "react";
 import ImageSlider from './utils/ImageSlider.jsx';
 import axios from 'axios';
 import { FullscreenExitOutlined } from "@ant-design/icons";

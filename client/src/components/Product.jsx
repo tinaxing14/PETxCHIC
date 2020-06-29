@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductDetail from "./ProductDetail";
@@ -68,6 +69,7 @@ const Product = ({ setCartNumber, cartNumber }) => {
           key={index}
           hoverable={true}
           cover={<ImageSlider images={product.images.slice(0,3)} autoplay={false} classname='product_imageSlider' dots={false} />}
+          // eslint-disable-next-line react/jsx-key
           actions={[<ShoppingCartOutlined />, <HeartOutlined />]}
         >
           <Meta

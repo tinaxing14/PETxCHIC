@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const AWS = require('aws-sdk')
 const fs = require('fs');
 
@@ -33,4 +34,6 @@ fetchUrls()
   .then(data => {
     fs.writeFileSync('./db/imageURLs.json',JSON.stringify(data))
   })
+
+
 module.exports = {fetchUrls};

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const { Product, User } = require('./schema.js')
 
 

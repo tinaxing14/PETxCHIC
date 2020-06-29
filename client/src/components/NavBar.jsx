@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { ShoppingCartOutlined, HomeOutlined, CoffeeOutlined } from "@ant-design/icons";
 import 'antd/dist/antd.css';
