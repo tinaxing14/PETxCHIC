@@ -11,7 +11,7 @@ const App = () => {
     <NavBar cartNumber={cartNumber}/>
     <div className="navbar__picture"></div>
     <div className='app__cover grow'>
-    <img className="cover__image" src="https://petfashion.s3.us-east-2.amazonaws.com/Screen+Shot+2020-06-08+at+5.14.00+PM.png"/>
+      <img className="cover__image" src="https://petfashion.s3.us-east-2.amazonaws.com/Screen+Shot+2020-06-08+at+5.14.00+PM.png"/>
     </div>
     <a href='#featureproducts'><div className="app_featureproducts">Featured Products</div></a>
     <Switch>
