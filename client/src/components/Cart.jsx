@@ -6,10 +6,12 @@ import { DeleteOutlined } from "@ant-design/icons";
 
 const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0);
+
   useEffect(() => {
     loadCart("tinaxingtest@gmail.com");
   }, []);
+
   const loadCart = (userId) => {
     axios
       .get(`/api/products/cart/${userId}`)
@@ -24,16 +26,17 @@ const Cart = () => {
         console.log(err);
       });
   };
+
   const deleteProduct = (userId, productid, size) => {
     axios.delete(`/api/products/cart/${userId}/${productid}/${size}`)
     .then((response) => {
-      console.log(response);
       loadCart("tinaxingtest@gmail.com")
     })
     .catch((err) => {
       console.log(err);
     });
   }
+
   return (
     <div className='cart__container'>
       <div className='cart__inner'>
@@ -76,8 +79,7 @@ const Cart = () => {
       <div className='cart__checkout'>
             <div className='carttotal'>Total Price: {`$${totalPrice}`}</div>
             <button className='cart__button'>Checkout</button>
-      </div>
-          
+      </div>     
     </div>
   );
 };
