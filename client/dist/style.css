@@ -11,6 +11,10 @@ h1 {
 
 }
 
+li{
+  color:white;
+}
+
 
 a div{
  color: white;
@@ -243,7 +247,7 @@ span{
   
 }
 .productdetail_imageSlider{
-  height:500px;
+  height:400px;
 }
 .product_info{
   width:100%;
@@ -395,12 +399,12 @@ span{
 .dropdown__container{
   background-color: black;
   position: fixed;
-  min-width: 180px;
-  width:11%;
+  width: 180px;
   font-size: medium;
   margin-top: 2px;
   z-index: 3;
   transform:translateX(-12%);
+  overflow:hidden;
 }
 
 .dropdown__item{
