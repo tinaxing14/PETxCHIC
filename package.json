@@ -39,6 +39,7 @@
     "less": "^3.11.3",
     "less-loader": "^6.1.0",
     "react-slick": "^0.26.1",
+    "react-transition-group": "^4.4.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.7.0",
