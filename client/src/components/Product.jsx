@@ -68,7 +68,7 @@ const Product = ({ setCartNumber, cartNumber }) => {
           }}
           key={index}
           hoverable={true}
-          cover={<ImageSlider images={product.images.slice(0,3)} autoplay={false} classname='product_imageSlider' dots={false} />}
+          cover={<ImageSlider images={product.images.slice(0,1)} autoplay={false} classname='product_imageSlider' dots={false} />}
           // eslint-disable-next-line react/jsx-key
           actions={[<ShoppingCartOutlined />, <HeartOutlined />]}
         >
