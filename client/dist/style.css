@@ -27,6 +27,10 @@ span{
 
 /* App */
 
+.maindiv{
+  position: relative;
+}
+
 .app_featureproducts {
   margin:0 40%;
   width:20%;
@@ -61,7 +65,7 @@ span{
 
 .app__cover {
   width: 100%;
-  height:600px;
+  min-height:600px;
   position:fixed;
   top:120px;
   margin-bottom: -50px;
@@ -154,7 +158,7 @@ span{
 .product_container{
   padding:50px 150px 0px 150px;
   width:100%;
-  display: center;
+  display: relative;
   margin:400px 0px 300px 0px;
   z-index: 2;
   background-color:whitesmoke;
@@ -162,6 +166,7 @@ span{
 }
 .product_imageSlider{
   max-height: 280px;
+  max-width: 280px;
 }
 .card{
   width:300px;
@@ -231,23 +236,30 @@ span{
   width: 70%;
   align-self:  center;
 }
+
 .productdetail_container{
   font-family: 'Anton', sans-serif;
   display: flex;
   flex-direction: row;
   z-index: 2;
   background-color: white;
-  height:75%;
+  height:500px;
+  min-width: 600px;
+  max-width: 1000px;
   width:80%;
   margin:100px auto;
+
 }
 
 .productdetail_image{
-  width: 600px;
+  width: 50%;
+  max-width:600px;
   
 }
 .productdetail_imageSlider{
-  height:400px;
+  max-height:450px;
+  height:100%;
+  width:100%;
 }
 .product_info{
   width:100%;
@@ -276,6 +288,8 @@ span{
   font-size: 13px;
   margin:20px 30px 20px 30px;
   text-align: justify;
+  height: 100%;
+  
 }
 
 .productdetail__size__container{
@@ -325,9 +339,11 @@ span{
 .cart__container{
   z-index: 2;
   background-color: white;
-  margin-top: -550px;
+  position: absolute;
+  margin-top: -45%;
   min-height: 2000px;
   font-family: 'Anton', sans-serif;
+  position: relative;
 }
 
 .cart__inner{
@@ -405,6 +421,7 @@ span{
   z-index: 3;
   transform:translateX(-12%);
   overflow:hidden;
+
 }
 
 .dropdown__item{
