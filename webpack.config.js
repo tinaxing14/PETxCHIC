@@ -1,8 +1,15 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
+const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
+  optimization: {
+    minimizer:[new TerserPlugin()],
+  },
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',
@@ -51,4 +58,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
   },
+  plugins: [
+    new CompressionPlugin(), new WebpackBundleAnalyzer()
+  ]
 };
