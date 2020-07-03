@@ -7,7 +7,7 @@ import NavBar from './NavBar.jsx'
 const App = () => {
   const[cartNumber, setCartNumber] = useState(0);
   return (
-  <div>
+  <div className="maindiv">
     <NavBar cartNumber={cartNumber}/>
     <div className="navbar__picture"></div>
     <div className='app__cover grow'>
