@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/server.js",
+    "react-pro": "webpack -p",
+    "start": "node server/server.js",
     "seed": "node db/seed.js"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "babel-jest": "^25.5.1",
     "babel-plugin-import": "^1.13.0",
     "babel-preset-react": "^6.23.0",
+    "compression-webpack-plugin": "^4.0.0",
     "css-loader": "^3.5.3",
     "eslint": "^7.3.1",
     "eslint-plugin-react": "^7.20.1",
@@ -41,8 +43,9 @@
     "react-slick": "^0.26.1",
     "react-transition-group": "^4.4.1",
     "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.6",
     "webpack": "^4.43.0",
-    "webpack-bundle-analyzer": "^3.7.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11"
   }
 }
